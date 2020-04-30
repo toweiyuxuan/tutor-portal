@@ -1,0 +1,9 @@
+package cn.wyx.dao;
+
+import cn.wyx.model.Demo;
+import cn.wyx.query.DemoQuery;
+
+public interface DemoDao extends BaseDao<Demo, DemoQuery> 
+{
+
+}

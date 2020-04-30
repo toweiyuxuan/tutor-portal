@@ -1,0 +1,17 @@
+package cn.wyx.service.impl;
+
+import cn.wyx.dao.DemoDao;
+import cn.wyx.model.Demo;
+import cn.wyx.query.DemoQuery;
+import cn.wyx.service.DemoService;
+
+public class DemoServiceImpl extends BaseServiceImpl<Demo, DemoQuery> implements DemoService 
+{	
+	private DemoDao demoDao;
+	
+	public void setDemoDao(DemoDao demoDao) 
+	{
+		this.demoDao = demoDao;
+		this.baseDao = demoDao;
+	}
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="http://www.springframework.org/schema/beans                         http://www.springframework.org/schema/beans/spring-beans-3.2.xsd              http://www.springframework.org/schema/context                         http://www.springframework.org/schema/context/spring-context-3.2.xsd              http://www.springframework.org/schema/tx                         http://www.springframework.org/schema/tx/spring-tx-3.2.xsd                         http://www.springframework.org/schema/aop               http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">  
+  <bean id="usersService" class="cn.wyx.service.impl.UsersServiceImpl"> 
+    <property name="usersDao" ref="usersDao"/> 
+  </bean>  
+  <bean id="parentService" class="cn.wyx.service.impl.ParentServiceImpl"> 
+    <property name="parentDao" ref="parentDao"/> 
+  </bean>  
+  <bean id="teacherService" class="cn.wyx.service.impl.TeacherServiceImpl"> 
+    <property name="teacherDao" ref="teacherDao"/> 
+  </bean>  
+  <bean id="mechanismService" class="cn.wyx.service.impl.MechanismServiceImpl"> 
+    <property name="mechanismDao" ref="mechanismDao"/> 
+  </bean>  
+  <bean id="mphotoService" class="cn.wyx.service.impl.MphotoServiceImpl"> 
+    <property name="mphotoDao" ref="mphotoDao"/> 
+  </bean>  
+  <bean id="pphotoService" class="cn.wyx.service.impl.PphotoServiceImpl"> 
+    <property name="pphotoDao" ref="pphotoDao"/> 
+  </bean>  
+  <bean id="tphotoService" class="cn.wyx.service.impl.TphotoServiceImpl"> 
+    <property name="tphotoDao" ref="tphotoDao"/> 
+  </bean>  
+  <bean id="preleaseService" class="cn.wyx.service.impl.PreleaseServiceImpl"> 
+    <property name="preleaseDao" ref="preleaseDao"/> 
+  </bean>  
+  <bean id="signupService" class="cn.wyx.service.impl.SignupServiceImpl"> 
+    <property name="signupDao" ref="signupDao"/> 
+  </bean>  
+  <bean id="subjecttypeService" class="cn.wyx.service.impl.SubjecttypeServiceImpl"> 
+    <property name="subjecttypeDao" ref="subjecttypeDao"/>  
+    <property name="parentDao" ref="parentDao"/> 
+  </bean>  
+  <bean id="teachertypeService" class="cn.wyx.service.impl.TeachertypeServiceImpl"> 
+    <property name="teachertypeDao" ref="teachertypeDao"/>  
+    <property name="parentDao" ref="parentDao"/> 
+  </bean>  
+  <bean id="mreleaseService" class="cn.wyx.service.impl.MreleaseServiceImpl"> 
+    <property name="mreleaseDao" ref="mreleaseDao"/> 
+  </bean>  
+  <bean id="mechanismtypeService" class="cn.wyx.service.impl.MechanismtypeServiceImpl">
+    <property name="mechanismtypeDao" ref="mechanismtypeDao"/>
+    <property name="mechanismDao" ref="mechanismDao"/> 
+  </bean>
+</beans>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="http://www.springframework.org/schema/beans                         http://www.springframework.org/schema/beans/spring-beans-3.2.xsd               http://www.springframework.org/schema/context                         http://www.springframework.org/schema/context/spring-context-3.2.xsd              http://www.springframework.org/schema/tx                         http://www.springframework.org/schema/tx/spring-tx-3.2.xsd                         http://www.springframework.org/schema/aop                         http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">  
+  <bean id="usersAction" class="cn.wyx.controller.UsersAction" scope="prototype"> 
+    <property name="usersService" ref="usersService"/>  
+    <property name="parentService" ref="parentService"/>  
+    <property name="pphotoService" ref="pphotoService"/>  
+    <property name="teacherService" ref="teacherService"/> 
+  </bean>  
+  <bean id="parentAction" class="cn.wyx.controller.ParentAction" scope="prototype"> 
+    <property name="parentService" ref="parentService"/>  
+    <property name="subjecttypeService" ref="subjecttypeService"/>  
+    <property name="teachertypeService" ref="teachertypeService"/>
+    <property name="usersService" ref="usersService"/>   
+  </bean>  
+  <bean id="teacherAction" class="cn.wyx.controller.TeacherAction" scope="prototype"> 
+    <property name="teacherService" ref="teacherService"/>  
+    <property name="teachertypeService" ref="teachertypeService"/>  
+    <property name="teacherDao" ref="teacherDao"/>  
+    <property name="usersService" ref="usersService"/> 
+  </bean>  
+  <bean id="mechanismAction" class="cn.wyx.controller.MechanismAction" scope="prototype"> 
+    <property name="mechanismService" ref="mechanismService"/>  
+    <property name="usersService" ref="usersService"/> 
+    <property name="mechanismtypeService" ref="mechanismtypeService"/>
+    <property name="mechanismDao" ref="mechanismDao"/>
+    <property name="mphotoDao" ref="mphotoDao"/>
+    <property name="mphotoService" ref="mphotoService"/>
+  </bean>  
+  <bean id="mphotoAction" class="cn.wyx.controller.MphotoAction" scope="prototype"> 
+    <property name="mphotoService" ref="mphotoService"/>  
+    <property name="mechanismDao" ref="mechanismDao"/>  
+    <property name="mphotoDao" ref="mphotoDao"/> 
+  </bean>  
+  <bean id="pphotoAction" class="cn.wyx.controller.PphotoAction" scope="prototype"> 
+    <property name="pphotoService" ref="pphotoService"/>  
+    <property name="pphotoDao" ref="pphotoDao"/>  
+    <property name="usersService" ref="usersService"/> 
+  </bean>  
+  <bean id="tphotoAction" class="cn.wyx.controller.TphotoAction" scope="prototype"> 
+    <property name="tphotoService" ref="tphotoService"/>  
+    <property name="tphotoDao" ref="tphotoDao"/>  
+    <property name="teacherDao" ref="teacherDao"/> 
+  </bean>  
+  <bean id="preleaseAction" class="cn.wyx.controller.PreleaseAction" scope="prototype"> 
+    <property name="preleaseService" ref="preleaseService"/>  
+    <property name="subjecttypeService" ref="subjecttypeService"/>  
+    <property name="parentDao" ref="parentDao"/>  
+    <property name="usersDao" ref="usersDao"/> 
+  </bean>  
+  <bean id="signupAction" class="cn.wyx.controller.SignupAction" scope="prototype"> 
+    <property name="signupService" ref="signupService"/>  
+    <property name="signupDao" ref="signupDao"/>  
+    <property name="preleaseService" ref="preleaseService"/>  
+    <property name="preleaseDao" ref="preleaseDao"/>  
+    <property name="teacherDao" ref="teacherDao"/>  
+    <property name="tphotoService" ref="tphotoService"/>  
+    <property name="usersDao" ref="usersDao"/> 
+  </bean>  
+  <bean id="subjecttypeAction" class="cn.wyx.controller.SubjecttypeAction" scope="prototype"> 
+    <property name="subjecttypeService" ref="subjecttypeService"/> 
+  </bean>  
+  <bean id="teachertypeAction" class="cn.wyx.controller.TeachertypeAction" scope="prototype"> 
+    <property name="teachertypeService" ref="teachertypeService"/> 
+  </bean>  
+  <bean id="mreleaseAction" class="cn.wyx.controller.MreleaseAction" scope="prototype"> 
+    <property name="mreleaseService" ref="mreleaseService"/>  
+    <property name="teachertypeDao" ref="teachertypeDao"/>  
+    <property name="usersDao" ref="usersDao"/>  
+    <property name="teachertypeService" ref="teachertypeService"/>  
+    <property name="mechanismService" ref="mechanismService"/> 
+    <property name="mechanismDao" ref="mechanismDao"/> 
+  </bean>  
+  <bean id="mechanismtypeAction" class="cn.wyx.controller.MechanismtypeAction" scope="prototype">
+    <property name="mechanismtypeService" ref="mechanismtypeService"/>
+  </bean>
+</beans>
